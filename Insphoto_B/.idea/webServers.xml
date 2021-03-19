@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c1b6e7f1-7e29-4874-a823-0a16300dbd33" name="阿里Ubuntu" url="http://47.105.203.231:8080">
+        <fileTransfer rootFolder="/root/java/apache-tomcat-9.0.34/webapps" accessType="SFTP" host="47.105.203.231" port="22" sshConfigId="77b65e9a-3c39-4cdd-b0af-820e7e790b7c" sshConfig="root@47.105.203.231:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

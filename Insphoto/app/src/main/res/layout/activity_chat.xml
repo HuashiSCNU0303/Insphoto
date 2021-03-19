@@ -1,0 +1,50 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/chatHeader"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_gravity="center"
+        android:background="#6475E1"
+        android:text="消息列表"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:onClick="refreshMsgPage"
+        android:textSize="23sp" />
+
+    <com.stfalcon.chatkit.messages.MessagesList
+        android:id="@+id/messagesList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/input"
+        android:layout_below="@id/chatHeader"
+        app:incomingAvatarHeight="56dp"
+        app:incomingAvatarWidth="56dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/input"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/gray_light"/>
+
+    <com.stfalcon.chatkit.messages.MessageInput
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:attachmentButtonBackground="?attr/selectableItemBackgroundBorderless"
+        app:attachmentButtonHeight="27dp"
+        app:attachmentButtonWidth="27dp"
+        app:inputButtonDefaultIconColor="@color/white"
+        app:inputButtonDefaultIconDisabledColor="@color/white60"
+        app:inputHint="输入聊天信息..."
+        app:showAttachmentButton="true"/>
+
+</RelativeLayout>

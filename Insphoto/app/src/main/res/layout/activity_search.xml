@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SearchActivity"
+    android:background="@drawable/homepage_bg">
+
+    <LinearLayout
+        android:id="@+id/searchHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E88E5"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+        <TextView
+            android:id="@+id/tab2_TextView1"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_gravity="center"
+            android:layout_weight="0.8"
+            android:background="#1E88E5"
+            android:gravity="center"
+            android:text="insPhoto"
+            android:textColor="#FFFFFF"
+            android:textSize="23sp"
+            android:textStyle="italic" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/searchBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchHeader">
+
+        <com.llollox.androidtoggleswitch.widgets.ToggleSwitch
+            android:id="@+id/searchType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2.5"
+            app:textToggleLeft="图片"
+            app:textToggleRight="用户" />
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_marginStart="5dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6.5"/>
+
+        <TextView
+            android:id="@+id/searchText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="搜索" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchBox"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:id="@+id/searchResultRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

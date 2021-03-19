@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Insphoto">
+    <output-path>$PROJECT_DIR$/out/artifacts/Insphoto</output-path>
+    <root id="archive" name="Insphoto.war">
+      <element id="artifact" artifact-name="Insphoto_B:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib" />
+      </element>
+    </root>
+  </artifact>
+</component>

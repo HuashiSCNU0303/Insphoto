@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/messagePageLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:layout_gravity="center"
+        android:background="#1E88E5"
+        android:text="消息列表"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:onClick="refreshMsgPage"
+        android:textSize="23sp" />
+
+    <com.stfalcon.chatkit.dialogs.DialogsList
+        android:id="@+id/recentMessageList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

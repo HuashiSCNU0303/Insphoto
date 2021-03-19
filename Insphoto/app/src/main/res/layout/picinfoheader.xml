@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/photo_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cardview_dark_background" />
+
+    <com.coorchice.library.SuperTextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:stv_corner="30dp"
+        app:stv_left_bottom_corner="false"
+        app:stv_left_top_corner="true"
+        app:stv_right_bottom_corner="true"
+        app:stv_right_top_corner="false"
+        app:stv_solid="#1E88E5" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/posterinfo"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/posterprofile"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/defaultprofile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/name_time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/posterprofile">
+
+            <TextView
+                android:id="@+id/postername"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:text="发布者"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/posttime"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:text="发布日期"
+                android:textSize="15dp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/star_like_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <LinearLayout
+            android:id="@+id/star"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/like"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.sackcentury.shinebuttonlib.ShineButton
+                android:id="@+id/starbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:src="@android:color/darker_gray"
+                app:allow_random_color="false"
+                app:big_shine_color="#FFFF00"
+                app:btn_color="@android:color/darker_gray"
+                app:btn_fill_color="#FFFF00"
+                app:click_animation_duration="200"
+                app:enable_flashing="false"
+                app:shine_animation_duration="1500"
+                app:shine_count="8"
+                app:shine_turn_angle="10"
+                app:siShape="@raw/star"
+                app:small_shine_color="#CC9999"
+                app:small_shine_offset_angle="20" />
+
+            <TextView
+                android:id="@+id/starnum"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="收藏数"
+                android:textSize="16sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/like"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/comment"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/star"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.sackcentury.shinebuttonlib.ShineButton
+                android:id="@+id/likebutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:src="@android:color/darker_gray"
+                app:allow_random_color="false"
+                app:big_shine_color="#FF6666"
+                app:btn_color="@android:color/darker_gray"
+                app:btn_fill_color="#FF6666"
+                app:click_animation_duration="200"
+                app:enable_flashing="false"
+                app:shine_animation_duration="1500"
+                app:shine_count="8"
+                app:shine_turn_angle="10"
+                app:siShape="@raw/like"
+                app:small_shine_color="#CC9999"
+                app:small_shine_offset_angle="20" />
+
+            <TextView
+                android:id="@+id/likenum"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="点赞数"
+                android:textSize="16sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/comment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/like"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/comment"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:id="@+id/commentnum"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="评论数"
+                android:textSize="16sp"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/commentnumtext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="9"
+            android:text="全部 0 条评论"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"/>
+
+        <ImageButton
+            android:id="@+id/refreshCommentButton"
+            android:layout_width="wrap_content"
+            android:layout_height="27sp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/refresh" />
+    </LinearLayout>
+</LinearLayout>
